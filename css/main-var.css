@@ -1,0 +1,113 @@
+/*  import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  background: rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90px; /* Ancho inicial */
+  height: 100%; /* Altura inicial */
+  background: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  transition: width 0.5s; /* Agregado para una transición suave */
+  z-index: 2;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  nav {
+      width: 70px; /* Reducir el ancho para dispositivos móviles */
+  }
+
+  .nav-toggle {
+      display: block; /* Mostrar el botón de menú en dispositivos móviles */
+  }
+
+  .nav-overlay {
+      display: none; /* Ocultar el fondo oscuro en dispositivos móviles */
+  }
+}
+
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Agrega un fondo oscuro para resaltar la barra de navegación */
+  z-index: 1; /* Asegúrate de que esté detrás de la barra de navegación */
+}
+
+nav:hover {
+  width: 280px; /* Mantenido */
+  transition: 1s;
+}
+.logo{
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+  padding-bottom: 3rem;
+}
+
+.logo img{
+  width: 45px;
+  height: 45px;
+}
+.logo span{
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+a{
+  position: relative;
+  width: 280px;
+  font-size: 14px;
+  color: #0f1a12;
+  display: table;
+  padding: 10px;
+}
+nav .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 20px;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+.nav-item{
+  position: relative;
+  top: 12px;
+  margin-left: 10px;
+}
+a:hover{
+  color: #0f301d;
+  transition: 0.5s;
+  background: #b9b5b5;
+}
+a:hover i{
+  color: #1c643f;
+  transition: 0.5s;
+}
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+
+.container{
+  display: flex;
+}

@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Ruta de tu GIF */
+    background-size: cover; /* Cubrir todo el fondo */
+    background-repeat: no-repeat; /* No repetir el fondo */
+    background-attachment: fixed; /* Fijar el fondo */
+}
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.card {
+    width: 250px;
+    margin-bottom: 20px; /* Agregamos un margen inferior para separar las cartas */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.large-card {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: auto; /* Cambiamos el alto fijo por "auto" */
+}
+
+.large-card:hover {
+    transform: translateY(-10px);
+}
+
+.large-card-images {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.large-card-images img {
+    width: 30%; /* Cambia el ancho al 50% para reducir el tamaño de las imágenes */
+    height: auto; /* Mantén la proporción de aspecto */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.large-card-images img:hover {
+    transform: scale(1.1);
+}
+
+.card-info {
+    padding: 15px 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.card:hover .card-info {
+    background-color: #f9f9f9;
+}
+
+.card-info h3 {
+    margin: 10px 0;
+    color: #333;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.card:hover .card-info h3 {
+    color: #555;
+}
+
+.card-info p {
+    color: #666;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.card:hover .card-info p {
+    color: #888;
+}
+
+.card-info a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.card-info a:hover {
+    color: #0056b3;
+}
+

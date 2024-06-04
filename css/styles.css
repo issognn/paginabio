@@ -1,0 +1,7 @@
+@import "carrucel.css";
+@import "main-var.css";
+@import "collage.css";
+@import "footer.css";
+body{
+    background-image: url("../img/fgris.png");
+}

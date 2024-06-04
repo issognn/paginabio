@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <style>
+    /* Agrega tu CSS personalizado aquí */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a class="logo">
+          <img src="/img/cecy-removebg-preview.png">
+          <span class="nav-item">Biotecnologia</span>
+        </a></li>
+        <li><a href="index.html">
+          <i class="fas fa-home"></i>
+          <span class="nav-item">Inicio</span>
+        </a></li>
+        <li class="dropdown">
+          <a href="#">
+            <i class="fas fa-comment"></i>
+            <span class="nav-item">Contacto</span>
+            <i class="fas fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-content">
+            <li><a href="/Paginas Extra/cor.html"><i class="fas fa-envelope"></i> Nuestro Correo</a></li>
+            <li><a href="/Paginas Extra/tel.html"><i class="fas fa-phone-alt"></i> Teléfono</a></li>
+          </ul>
+        </li>
+        <li><a href="/Paginas Extra/proyectos.html">
+          <i class="fas fa-tree"></i>
+          <span class="nav-item">Proyectos</span>
+        </a></li>
+        <li><a href="/Paginas Extra/doce.html">
+          <i class="fas fa-user-tie"></i>
+          <span class="nav-item">Docentes</span>
+        </a></li>
+        <li><a href="/Paginas Extra/info.html">
+          <i class="fas fa-info"></i>
+          <span class="nav-item">Info Adicional</span>
+        </a></li>
+        <li><a href="/Paginas Extra/horarios.html">
+          <i class="fas fa-table"></i>
+          <span class="nav-item">Horarios Escolares</span>
+        </a></li>
+        <li><a class="logout">
+          <i class="fas fa-bars"></i>
+        </a></li>
+      </ul>
+    </nav>
+</body>
+</html>

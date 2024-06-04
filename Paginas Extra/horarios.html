@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horarios Escolares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Estilos para dispositivos con ancho de pantalla menor que 768px */
+        @media only screen and (max-width: 768px) {
+            .horario-container {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .descargar-btn {
+                display: block;
+                margin: 10px auto;
+            }
+        }
+
+        /* Estilos para las imágenes */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/index.html" id="logo-link">
+        <img src="/img/cecy-removebg-preview.png" alt="Logo" id="logo">
+    </a>
+    <div class="container">
+        <h1>Descargar Horarios Escolares</h1>
+
+        <div class="horario-container">
+            <h2>Horario de Clases</h2>
+            <img src="/img/602A.png" alt="Horario de Clases">
+            <button class="descargar-btn" onclick="descargar('/img/602A.png')">Descargar</button>
+        </div>
+        <div class="horario-container">
+            <h2>Horario de Clases</h2>
+            <img src="/img/602B.png" alt="Horario de Clases">
+            <button class="descargar-btn" onclick="descargar('/img/602B.png')">Descargar</button>
+        </div>
+        <div class="horario-container">
+            <h2>Horario de Clases</h2>
+            <img src="/img/402.png" alt="Horario de Clases">
+            <button class="descargar-btn" onclick="descargar('/img/402.png')">Descargar</button>
+        </div>
+        <div class="horario-container">
+            <h2>Horario de Clases</h2>
+            <img src="/img/402B.png" alt="Horario de Clases">
+            <button class="descargar-btn" onclick="descargar('/img/402B.png')">Descargar</button>
+        </div>
+        <div class="horario-container">
+            <h2>Horario de Clases</h2>
+            <img src="/img/202.png" alt="Horario de Clases">
+            <button class="descargar-btn" onclick="descargar('/img/202.png')">Descargar</button>
+        </div>
+        <div class="horario-container">
+            <h2>Horario de Clases</h2>
+            <img src="/img/202b.png" alt="Horario de Clases">
+            <button class="descargar-btn" onclick="descargar('/img/202b.png')">Descargar</button>
+        </div>
+
+        <!-- Otras secciones horario-container aquí -->
+
+    </div>
+
+    <script>
+        function descargar(rutaImagen) {
+            var nombreArchivo = rutaImagen.substring(rutaImagen.lastIndexOf('/') + 1);
+            var link = document.createElement('a');
+            link.href = rutaImagen;
+            link.download = nombreArchivo;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+
+</html>
+
+
+

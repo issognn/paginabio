@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Web</title>
+    <!-- Importar fuentes de Google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <!-- Importar Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            transition: transform 0.3s ease;
+            margin: 10px;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .call-option {
+            margin-top: 20px;
+            text-decoration: underline;
+            color: #007bff;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .call-option:hover {
+            color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Estilos del menú de navegación */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 90px; /* Ancho inicial */
+            height: 100%; /* Altura inicial */
+            background: rgba(255, 255, 255, 0.9);
+            overflow: hidden;
+            transition: width 0.5s; /* Agregado para una transición suave */
+            z-index: 2;
+        }
+
+        /* Media query para dispositivos móviles */
+        @media (max-width: 768px) {
+            nav {
+                width: 70px; /* Reducir el ancho para dispositivos móviles */
+            }
+
+            .nav-toggle {
+                display: block; /* Mostrar el botón de menú en dispositivos móviles */
+            }
+
+            .nav-overlay {
+                display: none; /* Ocultar el fondo oscuro en dispositivos móviles */
+            }
+        }
+
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Agrega un fondo oscuro para resaltar la barra de navegación */
+            z-index: 1; /* Asegúrate de que esté detrás de la barra de navegación */
+        }
+
+        nav:hover {
+            width: 280px; /* Mantenido */
+            transition: 1s;
+        }
+
+        .logo {
+            text-align: center;
+            display: flex;
+            margin: 10px 0 0 10px;
+            padding-bottom: 3rem;
+        }
+
+        .logo img {
+            width: 45px;
+            height: 45px;
+        }
+
+        .logo span {
+            font-weight: bold;
+            padding-left: 15px;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        a {
+            position: relative;
+            width: 280px;
+            font-size: 14px;
+            color: #0f1a12;
+            display: table;
+            padding: 10px;
+        }
+
+        nav .fas {
+            position: relative;
+            width: 70px;
+            height: 40px;
+            top: 20px;
+            font-size: 20px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .nav-item {
+            position: relative;
+            top: 12px;
+            margin-left: 10px;
+        }
+
+        a:hover {
+            color: #0f301d;
+            transition: 0.5s;
+            background: #b9b5b5;
+        }
+
+        a:hover i {
+            color: #1c643f;
+            transition: 0.5s;
+        }
+
+        .logout {
+            position: absolute;
+            bottom: 0;
+        }
+
+        /* Estilos del dropdown */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a class="logo">
+                    <img src="../img/cecy-removebg-preview.png">
+                    <span class="nav-item">Biotecnologia</span>
+                </a>
+            </li>
+            <li>
+                <a href="../index.html">
+                    <i class="fas fa-home"></i>
+                    <span class="nav-item">Inicio</span>
+                </a>
+            </li>
+            <li class="dropdown">
+                <a href="#">
+                    <i class="fas fa-comment"></i>
+                    <span class="nav-item">Contacto</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-content">
+                    <li><a href="../Paginas Extra/cor.html"><i class="fas fa-envelope"></i> Nuestro Correo</a></li>
+                    <li><a href="../Paginas Extra/tel.html"><i class="fas fa-phone-alt"></i> Teléfono</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="../Paginas Extra/proyectos.html">
+                    <i class="fas fa-tree"></i>
+                    <span class="nav-item">Proyectos</span>
+                </a>
+            </li>
+            <li>
+                <a href="../Paginas Extra/doce.html">
+                    <i class="fas fa-user-tie"></i>
+                    <span class="nav-item">Docentes</span>
+                </a>
+            </li>
+            <li>
+                <a href="../Paginas Extra/info.html">
+                    <i class="fas fa-info"></i>
+                    <span class="nav-item">Info Adicional</span>
+                </a>
+            </li>
+            <li><a href="/Paginas Extra/horarios.html">
+                <i class="fas fa-table"></i>
+                <span class="nav-item">Horarios Escolares</span>
+              </a></li>
+            <li>
+                
+                <a class="logout">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div id="schoolContainer" class="container-content">
+            <h2>Contactar por correo electrónico</h2>
+            <p>Correo electrónico: info@escuela.com</p>
+            <p class="call-option" onclick="showEmailInput()">Prefiero ingresar mi correo electrónico</p>
+        </div>
+
+        <div id="emailContainer" class="container-content hidden">
+            <h2>Ingresa tu correo electrónico</h2>
+            <input id="emailAddress" type="email" placeholder="Correo electrónico">
+            <button onclick="sendEmail()">Enviar correo</button>
+        </div>
+    </div>
+
+    <script>
+        function sendEmail() {
+            var emailAddress = document.getElementById('emailAddress').value;
+            // Aquí puedes hacer algo con el correo electrónico, como enviarlo a un servidor
+            alert("Tu correo electrónico es: " + emailAddress);
+        }
+
+        function showEmailInput() {
+            var emailContainer = document.getElementById('emailContainer');
+            var schoolContainer = document.getElementById('schoolContainer');
+
+            schoolContainer.classList.add('hidden');
+            emailContainer.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
+
